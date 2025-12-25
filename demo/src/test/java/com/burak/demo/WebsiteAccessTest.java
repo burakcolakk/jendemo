@@ -1,4 +1,4 @@
-package com.burak;
+package com.burak.demo;
 
 import org.junit.jupiter.api.Test;
 import java.net.HttpURLConnection;
