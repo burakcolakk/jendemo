@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    tools {
+        // Jenkins'te Maven nasıl kayıtlıysa o ismi yaz (Genelde 'maven' veya 'M3')
+        maven 'maven'
+    }
+    stages {
+        stage('Test & Control') {
+            steps {
+                echo 'Erişim kontrolü başlıyor...'
+                // Test başarısız olursa pipeline burada DURUR.
+                sh 'mvn clean test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Test başarılı! Deploy işlemi yapılıyor...'
+                // Buraya gerçek deploy komutların gelecek
+            }
+        }
+    }
+}
